@@ -67,9 +67,9 @@ namespace ElKalista
             if (ObjectManager.Player.BaseSkinName != "Kalista")
                 return;
 
-            Console.WriteLine("Injected");
+            Console.WriteLine("Enjekte Edildi.");
 
-            Notifications.AddNotification("ElKalista by jQuery v1.0.1.1", 5000);
+            Notifications.AddNotification("jQuery'nin ElKalistası", 5000);
 
             spells[Spells.Q].SetSkillshot(0.25f, 30f, 1700f, true, SkillshotType.SkillshotLine);
 
