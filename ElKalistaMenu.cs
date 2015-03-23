@@ -97,10 +97,10 @@ namespace ElKalista
             miscMenu.AddItem(new MenuItem("ElKalista.Draw.W", "W'yu Çiz").SetValue(new Circle()));
             miscMenu.AddItem(new MenuItem("ElKalista.Draw.E", "E'yi Çiz").SetValue(new Circle()));
             miscMenu.AddItem(new MenuItem("ElKalista.Draw.R", "R'yi Çiz").SetValue(new Circle()));
-            miscMenu.AddItem(new MenuItem("ElKalista.Draw.Text", "Metinleri Çiz").SetValue(true));
+            miscMenu.AddItem(new MenuItem("ElKalista.Draw.Text", "Metinleri Göster").SetValue(true));
 
             var dmgAfterE = new MenuItem("ElKalista.DrawComboDamage", "E Damage'ini Goster").SetValue(true);
-            var drawFill = new MenuItem("ElKalista.DrawColour", "Fill colour", true).SetValue(new Circle(true, Color.FromArgb(204, 204, 0, 0)));
+            var drawFill = new MenuItem("ElKalista.DrawColour", "Rengi Seç", true).SetValue(new Circle(true, Color.FromArgb(204, 204, 0, 0)));
             miscMenu.AddItem(drawFill);
             miscMenu.AddItem(dmgAfterE);
 
@@ -125,7 +125,7 @@ namespace ElKalista
             _menu.AddSubMenu(miscMenu);
 
             //Here comes the moneyyy, money, money, moneyyyy
-            var credits = new Menu("Credits", "jQuery");
+            var credits = new Menu("Yapımcı", "jQuery");
             credits.AddItem(new MenuItem("ElKalista.Paypal", "Yapımcıya Paypal İle Destek Olmak İçin:"));
             credits.AddItem(new MenuItem("ElKalista.Email", "info@zavox.nl"));
             _menu.AddSubMenu(credits);
