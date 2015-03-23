@@ -1,2 +1,0 @@
-# ElKalista
-Turkish ElKalista forKebabz
