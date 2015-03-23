@@ -17,7 +17,7 @@ namespace ElKalista
 
         public static void Initialize()
         {
-            _menu = new Menu("ElKalista", "menu", true);
+            _menu = new Menu("ElKalista(TR)", "menu", true);
 
             //ElKalista.Orbwalker
             var orbwalkerMenu = new Menu("Orbwalker", "orbwalker");
@@ -42,64 +42,64 @@ namespace ElKalista
             cMenu.AddItem(new MenuItem("ComboActive", "Kombo!").SetValue(new KeyBind(32, KeyBindType.Press)));
             _menu.AddSubMenu(cMenu);
 
-            var hMenu = new Menu("Harass", "Harass");
-            hMenu.AddItem(new MenuItem("ElKalista.Harass.Q", "Use Q").SetValue(true));
-            hMenu.AddItem(new MenuItem("ElKalista.minmanaharass", "Harass mana")).SetValue(new Slider(55));
-            hMenu.AddItem(new MenuItem("ElKalista.hitChance", "Hitchance Q").SetValue(new StringList(new[] { "Low", "Medium", "High", "Very High" }, 3)));
+            var hMenu = new Menu("Dürtme", "Harass");
+            hMenu.AddItem(new MenuItem("ElKalista.Harass.Q", "Dürtmek Icin Q Kullan").SetValue(true));
+            hMenu.AddItem(new MenuItem("ElKalista.minmanaharass", "Minumum Mana")).SetValue(new Slider(55));
+            hMenu.AddItem(new MenuItem("ElKalista.hitChance", "Q'nun Vurma Sansi").SetValue(new StringList(new[] { "Düşük", "Orta", "Yüksek", "Çok Yüksek" }, 3)));
 
-            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElKalista.AutoHarass", "[Toggle] Auto harass", false).SetValue(new KeyBind("U".ToCharArray()[0], KeyBindType.Toggle)));
-            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElKalista.UseQAutoHarass", "Use Q").SetValue(true));
-            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElKalista.harass.mana", "Auto harass mana")).SetValue(new Slider(55));
+            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElKalista.AutoHarass", "[Devamlı] Otomatik Dürtme", false).SetValue(new KeyBind("U".ToCharArray()[0], KeyBindType.Toggle)));
+            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElKalista.UseQAutoHarass", "Q'yu Harasta Kullan").SetValue(true));
+            hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElKalista.harass.mana", "Otomatik Dürtme İçin Mana")).SetValue(new Slider(55));
 
             _menu.AddSubMenu(hMenu);
 
 
-            var lMenu = new Menu("Lane clear", "Clear");
-            lMenu.AddItem(new MenuItem("useQFarm", "Use Q").SetValue(true));
-            lMenu.AddItem(new MenuItem("ElKalista.Count.Minions", "Killable minions with Q >=").SetValue(new Slider(2, 1, 5)));
+            var lMenu = new Menu("Koridor Temizleme", "Clear");
+            lMenu.AddItem(new MenuItem("useQFarm", "Q'yu Kullan").SetValue(true));
+            lMenu.AddItem(new MenuItem("ElKalista.Count.Minions", "Q İle Öldürülebilecek Minyon Sayısı >=").SetValue(new Slider(2, 1, 5)));
             lMenu.AddItem(new MenuItem("useEFarm", "Use E").SetValue(true));
-            lMenu.AddItem(new MenuItem("ElKalista.Count.Minions.E", "Killable minions with E >=").SetValue(new Slider(2, 1, 5)));
+            lMenu.AddItem(new MenuItem("ElKalista.Count.Minions.E", "E İle Öldürülebilecek Minyon Sayısı >=").SetValue(new Slider(2, 1, 5)));
             lMenu.AddItem(new MenuItem("useEFarmddsddaadsd", ""));
-            lMenu.AddItem(new MenuItem("useQFarmJungle", "Use Q in jungle").SetValue(true));
-            lMenu.AddItem(new MenuItem("useEFarmJungle", "Use E in jungle").SetValue(true));
+            lMenu.AddItem(new MenuItem("useQFarmJungle", "Q'yu Jungle Moblarında Kullan").SetValue(true));
+            lMenu.AddItem(new MenuItem("useEFarmJungle", "E'yi Jungle Moblarında Kullan").SetValue(true));
             lMenu.AddItem(new MenuItem("useEFarmddssd", ""));
-            lMenu.AddItem(new MenuItem("minmanaclear", "Mana needed to clear ")).SetValue(new Slider(55));
+            lMenu.AddItem(new MenuItem("minmanaclear", "Koridor Temizleme İçin Minumum Mana ")).SetValue(new Slider(55));
 
             _menu.AddSubMenu(lMenu);
 
 
-            var itemMenu = new Menu("Items", "Items");
-            itemMenu.AddItem(new MenuItem("ElKalista.Items.Youmuu", "Use Youmuu's Ghostblade").SetValue(true));
-            itemMenu.AddItem(new MenuItem("ElKalista.Items.Cutlass", "Use Cutlass").SetValue(true));
-            itemMenu.AddItem(new MenuItem("ElKalista.Items.Blade", "Use Blade of the Ruined King").SetValue(true));
+            var itemMenu = new Menu("Eşyalar", "Items");
+            itemMenu.AddItem(new MenuItem("ElKalista.Items.Youmuu", "Youmuu'nun Hayaletkılıcı'nı Kullan").SetValue(true));
+            itemMenu.AddItem(new MenuItem("ElKalista.Items.Cutlass", "Bilgewater Palası'nı Kullan").SetValue(true));
+            itemMenu.AddItem(new MenuItem("ElKalista.Items.Blade", "Mahvolmuş Kralın Kılıcı'nı Kullan").SetValue(true));
             itemMenu.AddItem(new MenuItem("ElKalista.Harasssfsddass.E", ""));
-            itemMenu.AddItem(new MenuItem("ElKalista.Items.Blade.EnemyEHP", "Enemy HP Percentage").SetValue(new Slider(80, 100, 0)));
-            itemMenu.AddItem(new MenuItem("ElKalista.Items.Blade.EnemyMHP", "My HP Percentage").SetValue(new Slider(80, 100, 0)));
+            itemMenu.AddItem(new MenuItem("ElKalista.Items.Blade.EnemyEHP", "Düşmanın Yüzdelik Canı").SetValue(new Slider(80, 100, 0)));
+            itemMenu.AddItem(new MenuItem("ElKalista.Items.Blade.EnemyMHP", "Benim Yüzdelik Canım").SetValue(new Slider(80, 100, 0)));
             _menu.AddSubMenu(itemMenu);
 
 
-            var setMenu = new Menu("Secret Settings", "SSS");
-            setMenu.AddItem(new MenuItem("ElKalista.misc.save", "Save ally with R").SetValue(true));
-            setMenu.AddItem(new MenuItem("ElKalista.misc.allyhp", "Ally HP Percentage").SetValue(new Slider(25, 100, 0)));
+            var setMenu = new Menu("Gizli Özellikler", "SSS");
+            setMenu.AddItem(new MenuItem("ElKalista.misc.save", "Partnerini R ile Kurtar").SetValue(true));
+            setMenu.AddItem(new MenuItem("ElKalista.misc.allyhp", "Partnerin Yüzdelik Canı").SetValue(new Slider(25, 100, 0)));
             setMenu.AddItem(new MenuItem("useEFarmddsddsasfsasdsdsaadsd", ""));
-            setMenu.AddItem(new MenuItem("ElKalista.E.Auto", "Auto use E").SetValue(true));
-            setMenu.AddItem(new MenuItem("ElKalista.E.Stacks", "Stacks for E usage >=").SetValue(new Slider(10, 1, 20)));
+            setMenu.AddItem(new MenuItem("ElKalista.E.Auto", "E'yi Otomatik Kullan").SetValue(true));
+            setMenu.AddItem(new MenuItem("ElKalista.E.Stacks", "E'yi Otomatik Kullanmak İçin Stack Sayısı >=").SetValue(new Slider(10, 1, 20)));
             setMenu.AddItem(new MenuItem("useEFafsdsgdrmddsddsasfsasdsdsaadsd", ""));
-            setMenu.AddItem(new MenuItem("ElKalista.misc.ks", "Killsteal mode").SetValue(false));
-            setMenu.AddItem(new MenuItem("ElKalista.misc.junglesteal", "Jungle steal mode").SetValue(true));
+            setMenu.AddItem(new MenuItem("ElKalista.misc.ks", "Kill Çalma Modu").SetValue(false));
+            setMenu.AddItem(new MenuItem("ElKalista.misc.junglesteal", "Jungle Mobu Çalma Modu").SetValue(true));
 
             _menu.AddSubMenu(setMenu);
 
             //ElKalista.Misc
-            var miscMenu = new Menu("Drawings", "Misc");
-            miscMenu.AddItem(new MenuItem("ElKalista.Draw.off", "Turn drawings off").SetValue(false));
-            miscMenu.AddItem(new MenuItem("ElKalista.Draw.Q", "Draw Q").SetValue(new Circle()));
-            miscMenu.AddItem(new MenuItem("ElKalista.Draw.W", "Draw W").SetValue(new Circle()));
-            miscMenu.AddItem(new MenuItem("ElKalista.Draw.E", "Draw E").SetValue(new Circle()));
-            miscMenu.AddItem(new MenuItem("ElKalista.Draw.R", "Draw R").SetValue(new Circle()));
-            miscMenu.AddItem(new MenuItem("ElKalista.Draw.Text", "Draw Text").SetValue(true));
+            var miscMenu = new Menu("Çizimler", "Misc");
+            miscMenu.AddItem(new MenuItem("ElKalista.Draw.off", "Çizimleri Kapat").SetValue(false));
+            miscMenu.AddItem(new MenuItem("ElKalista.Draw.Q", "Q'yu Çiz").SetValue(new Circle()));
+            miscMenu.AddItem(new MenuItem("ElKalista.Draw.W", "W'yu Çiz").SetValue(new Circle()));
+            miscMenu.AddItem(new MenuItem("ElKalista.Draw.E", "E'yi Çiz").SetValue(new Circle()));
+            miscMenu.AddItem(new MenuItem("ElKalista.Draw.R", "R'yi Çiz").SetValue(new Circle()));
+            miscMenu.AddItem(new MenuItem("ElKalista.Draw.Text", "Metinleri Çiz").SetValue(true));
 
-            var dmgAfterE = new MenuItem("ElKalista.DrawComboDamage", "Draw E damage").SetValue(true);
+            var dmgAfterE = new MenuItem("ElKalista.DrawComboDamage", "E Damage'ini Goster").SetValue(true);
             var drawFill = new MenuItem("ElKalista.DrawColour", "Fill colour", true).SetValue(new Circle(true, Color.FromArgb(204, 204, 0, 0)));
             miscMenu.AddItem(drawFill);
             miscMenu.AddItem(dmgAfterE);
@@ -126,13 +126,14 @@ namespace ElKalista
 
             //Here comes the moneyyy, money, money, moneyyyy
             var credits = new Menu("Credits", "jQuery");
-            credits.AddItem(new MenuItem("ElKalista.Paypal", "if you would like to donate via paypal:"));
+            credits.AddItem(new MenuItem("ElKalista.Paypal", "Yapımcıya Paypal İle Destek Olmak İçin:"));
             credits.AddItem(new MenuItem("ElKalista.Email", "info@zavox.nl"));
             _menu.AddSubMenu(credits);
 
             _menu.AddItem(new MenuItem("422442fsaafs4242f", ""));
-            _menu.AddItem(new MenuItem("422442fsaafsf", "Alpha Version: 1.0.1.2"));
-            _menu.AddItem(new MenuItem("fsasfafsfsafsa", "Made By jQuery"));
+            _menu.AddItem(new MenuItem("422442fsaafsf", "Alpha Versiyon: 1.0.1.2"));
+            _menu.AddItem(new MenuItem("fsasfafsfsafsa", "jQuery tarafında yapılıp"));
+            _menu.AddItem(new MenuItem("fsasfafsfsafsaas", "ShamelessPerson Tarafından Çevrilmiştir"));
 
             _menu.AddToMainMenu();
 
