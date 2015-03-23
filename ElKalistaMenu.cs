@@ -25,7 +25,7 @@ namespace ElKalista
             _menu.AddSubMenu(orbwalkerMenu);
 
             //ElKalista.TargetSelector
-            var targetSelector = new Menu("Target Selector", "TargetSelector");
+            var targetSelector = new Menu("Hedef Secme", "TargetSelector");
             TargetSelector.AddToMenu(targetSelector);
             _menu.AddSubMenu(targetSelector);
 
