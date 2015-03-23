@@ -47,7 +47,7 @@ namespace ElKalista
                     Render.Circle.DrawCircle(ObjectManager.Player.Position, Kalista.spells[Spells.R].Range, Color.White);
 
             if (drawText)
-                Drawing.DrawText(playerPos.X - 70, playerPos.Y + 40, (rBool ? Color.Green : Color.Red), "{0}", (rBool ? "Auto harass Enabled" : "Auto harass Disabled"));
+                Drawing.DrawText(playerPos.X - 70, playerPos.Y + 40, (rBool ? Color.Green : Color.Red), "{0}", (rBool ? "Otomatik Dürtme Etkin" : "Otomatik Dürtme Kapalı"));
         }
     }
 }
