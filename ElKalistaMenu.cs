@@ -37,7 +37,7 @@ namespace ElKalista
             cMenu.AddItem(new MenuItem("ElKalista.ComboE.Auto", "Stacklenmis E'yi Kullan").SetValue(true));
             cMenu.AddItem(new MenuItem("ElKalista.ssssddsdssssss", ""));
 
-            cMenu.AddItem(new MenuItem("ElKalista.hitChance", "Q'nun Vurma Sansi").SetValue(new StringList(new[] { "Düsük", "Orta", "Yuksek", "Cok Yuksek" }, 3)));
+            cMenu.AddItem(new MenuItem("ElKalista.hitChance", "Q'nun Vurma Sansi").SetValue(new StringList(new[] { "Dusuk", "Orta", "Yuksek", "Cok Yuksek" }, 3)));
             cMenu.AddItem(new MenuItem("ElKalista.SemiR", "Yari Otomatik R").SetValue(new KeyBind("T".ToCharArray()[0], KeyBindType.Press)));
             cMenu.AddItem(new MenuItem("ComboActive", "Kombo!").SetValue(new KeyBind(32, KeyBindType.Press)));
             _menu.AddSubMenu(cMenu);
@@ -45,7 +45,7 @@ namespace ElKalista
             var hMenu = new Menu("Dürtme", "Harass");
             hMenu.AddItem(new MenuItem("ElKalista.Harass.Q", "Dürtmek Icin Q Kullan").SetValue(true));
             hMenu.AddItem(new MenuItem("ElKalista.minmanaharass", "Minumum Mana")).SetValue(new Slider(55));
-            hMenu.AddItem(new MenuItem("ElKalista.hitChance", "Q'nun Vurma Sansi").SetValue(new StringList(new[] { "Düşük", "Orta", "Yüksek", "Çok Yüksek" }, 3)));
+            hMenu.AddItem(new MenuItem("ElKalista.hitChance", "Q'nun Vurma Sansi").SetValue(new StringList(new[] { "Dusuk", "Orta", "Yuksek", "Cok Yuksek" }, 3)));
 
             hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElKalista.AutoHarass", "[Devamlı] Otomatik Dürtme", false).SetValue(new KeyBind("U".ToCharArray()[0], KeyBindType.Toggle)));
             hMenu.SubMenu("AutoHarass").AddItem(new MenuItem("ElKalista.UseQAutoHarass", "Q'yu Harasta Kullan").SetValue(true));
