@@ -29,17 +29,17 @@ namespace ElKalista
             TargetSelector.AddToMenu(targetSelector);
             _menu.AddSubMenu(targetSelector);
 
-            var cMenu = new Menu("Combo", "Combo");
-            cMenu.AddItem(new MenuItem("ElKalista.Combo.Q", "Use Q").SetValue(true));
-            cMenu.AddItem(new MenuItem("ElKalista.Combo.E", "Use E").SetValue(true));
-            cMenu.AddItem(new MenuItem("ElKalista.Combo.R", "Use R").SetValue(true));
+            var cMenu = new Menu("Kombo", "Combo");
+            cMenu.AddItem(new MenuItem("ElKalista.Combo.Q", "Q'yu Kullan").SetValue(true));
+            cMenu.AddItem(new MenuItem("ElKalista.Combo.E", "E'yi Kullan").SetValue(true));
+            cMenu.AddItem(new MenuItem("ElKalista.Combo.R", "R'yi Kullan").SetValue(true));
             cMenu.AddItem(new MenuItem("ElKalista.sssssssss", ""));
-            cMenu.AddItem(new MenuItem("ElKalista.ComboE.Auto", "Use stacked E").SetValue(true));
+            cMenu.AddItem(new MenuItem("ElKalista.ComboE.Auto", "Stacklenmis E'yi Kullan").SetValue(true));
             cMenu.AddItem(new MenuItem("ElKalista.ssssddsdssssss", ""));
 
-            cMenu.AddItem(new MenuItem("ElKalista.hitChance", "Hitchance Q").SetValue(new StringList(new[] { "Low", "Medium", "High", "Very High" }, 3)));
-            cMenu.AddItem(new MenuItem("ElKalista.SemiR", "Semi-manual R").SetValue(new KeyBind("T".ToCharArray()[0], KeyBindType.Press)));
-            cMenu.AddItem(new MenuItem("ComboActive", "Combo!").SetValue(new KeyBind(32, KeyBindType.Press)));
+            cMenu.AddItem(new MenuItem("ElKalista.hitChance", "Q'nun Vurma Sansi").SetValue(new StringList(new[] { "Düsük", "Orta", "Yuksek", "Cok Yuksek" }, 3)));
+            cMenu.AddItem(new MenuItem("ElKalista.SemiR", "Yari Otomatik R").SetValue(new KeyBind("T".ToCharArray()[0], KeyBindType.Press)));
+            cMenu.AddItem(new MenuItem("ComboActive", "Kombo!").SetValue(new KeyBind(32, KeyBindType.Press)));
             _menu.AddSubMenu(cMenu);
 
             var hMenu = new Menu("Harass", "Harass");
