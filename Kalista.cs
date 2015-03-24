@@ -74,9 +74,9 @@ namespace ElKalista
                 return;
             }
 
-            Console.WriteLine("Injected");
+            Console.WriteLine("Enjekte Edildi");
 
-            Notifications.AddNotification("ElKalista by jQuery v1.0.1.3", 5000);
+            Notifications.AddNotification("JQuery'nin 'ElKalista'sı", 5000);
 
             spells[Spells.Q].SetSkillshot(0.25f, 30f, 1700f, true, SkillshotType.SkillshotLine);
 
