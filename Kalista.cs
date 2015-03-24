@@ -74,9 +74,9 @@ namespace ElKalista
                 return;
             }
 
-            Console.WriteLine("Enjekte Edildi");
+            Console.WriteLine("Injected");
 
-            Notifications.AddNotification("JQuery'nin 'ElKalista'sı", 5000);
+            Notifications.AddNotification("ElKalista by jQuery v1.0.1.3", 5000);
 
             spells[Spells.Q].SetSkillshot(0.25f, 30f, 1700f, true, SkillshotType.SkillshotLine);
 
@@ -323,7 +323,7 @@ namespace ElKalista
                 return;
             }
 
-            if (!Orbwalking.CanMove(1) ||
+            if (
                 !(Player.ManaPercentage() > ElKalistaMenu._menu.Item("ElKalista.minmanaharass").GetValue<Slider>().Value))
             {
                 return;
@@ -347,11 +347,6 @@ namespace ElKalista
         private static void Combo(Obj_AI_Base target)
         {
             if (target == null || !target.IsValidTarget())
-            {
-                return;
-            }
-
-            if (!Orbwalking.CanMove(1))
             {
                 return;
             }
@@ -483,7 +478,7 @@ namespace ElKalista
             var countMinions = ElKalistaMenu._menu.Item("ElKalista.Count.Minions").GetValue<Slider>().Value;
             var countMinionsE = ElKalistaMenu._menu.Item("ElKalista.Count.Minions.E").GetValue<Slider>().Value;
 
-            if (!Orbwalking.CanMove(1) ||
+            if (
                 !(Player.ManaPercentage() > ElKalistaMenu._menu.Item("minmanaclear").GetValue<Slider>().Value))
             {
                 return;
