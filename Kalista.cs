@@ -22,9 +22,13 @@ namespace ElKalista
 
     internal class Kalista
     {
-        public static Obj_AI_Hero Player { get { return ObjectManager.Player; } }
-        public static Orbwalking.Orbwalker _orbwalker;
-        private static Obj_AI_Hero ConnectedAlly { get; set; }
+        public static Obj_AI_Hero Player
+        {
+            get { return ObjectManager.Player; }
+        }
+
+        public static Orbwalking.Orbwalker Orbwalker;
+        private static Obj_AI_Hero ConnectedAlly;
 
 
         public static Dictionary<Spells, Spell> spells = new Dictionary<Spells, Spell>()
