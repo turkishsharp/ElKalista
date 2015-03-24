@@ -130,7 +130,7 @@ namespace ElKalista
             _menu.AddSubMenu(credits);
 
             _menu.AddItem(new MenuItem("422442fsaafs4242f", ""));
-            _menu.AddItem(new MenuItem("422442fsaafsf", "Alpha Versiyon: 1.0.1.3"));
+            _menu.AddItem(new MenuItem("422442fsaafsf", "Alpha Versiyon: 1.0.1.4"));
             _menu.AddItem(new MenuItem("fsasfafsfsafsa", "jQuery tarafında yapılıp"));
             _menu.AddItem(new MenuItem("fsasfafsfsafsaas", "ShamelessPerson Tarafından Çevrilmiştir"));
 
